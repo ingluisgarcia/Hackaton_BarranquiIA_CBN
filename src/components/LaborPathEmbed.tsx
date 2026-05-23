@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Bot, MessageCircle, Sparkles } from "lucide-react";
 
 export const LABOR_PATH_IFRAME_SRC =
-  "https://hackaton.adolfo.lol/?mode=moodle&programId=1";
+  "https://hackaton.adolfo.lol/";
 
 export const LABOR_PATH_ANCHOR = "camino-laboral";
 
