@@ -40,7 +40,27 @@ src/
     └── utils.ts
 ```
 
-## Marca
+## Publicar en GitHub
+
+Desde la carpeta del proyecto, ejecuta **uno** de estos métodos:
+
+**Opción A — archivo .cmd (recomendado en Windows):**
+```cmd
+scripts\publish-github.cmd
+```
+
+**Opción B — PowerShell sin cambiar políticas del sistema:**
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\publish-github.ps1
+```
+
+**Opción C — comandos directos:**
+```powershell
+$env:PATH = "C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI;" + $env:PATH
+gh auth login -h github.com -p https -w
+gh repo create Hackaton_2026 --public --source=. --remote=origin --push --description "Synervia - Plataforma Hackaton 2026"
+```
+
 
 | Token | Valor |
 |-------|-------|
