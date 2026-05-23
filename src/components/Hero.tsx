@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Briefcase, Compass, Rocket, Sparkles } from "lucide-react";
 import { Button } from "./ui/Button";
+import { LABOR_PATH_ANCHOR } from "./LaborPathEmbed";
 
 export function Hero() {
   return (
@@ -53,7 +54,7 @@ export function Hero() {
                   />
                 </Button>
               </Link>
-              <a href="#camino">
+              <a href={`#${LABOR_PATH_ANCHOR}`}>
                 <Button variant="secondary" size="lg">
                   Ver cómo funciona
                 </Button>
