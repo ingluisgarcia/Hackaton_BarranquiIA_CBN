@@ -1,4 +1,4 @@
-# Synervia
+# Synervia — Hackaton 2026
 
 Plataforma de orientación laboral y emprendimiento impulsada por inteligencia artificial.
 
