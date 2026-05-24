@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
   // Permite acceder vía túnel ngrok en desarrollo sin warnings de origen cruzado
@@ -14,4 +13,9 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
-initOpenNextCloudflareForDev();
+// Cloudflare Miniflare solo en dev local. En Vercel/CI provoca EPIPE y cuelga el build.
+if (process.env.NODE_ENV === "development" && !process.env.CI) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { initOpenNextCloudflareForDev } = require("@opennextjs/cloudflare");
+  initOpenNextCloudflareForDev();
+}
