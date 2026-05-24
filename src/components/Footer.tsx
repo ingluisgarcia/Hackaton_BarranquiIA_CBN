@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { ArrowRight, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
+import { HashLink } from "./HashLink";
+import { LABOR_PATH_HASH } from "@/lib/labor-path";
 
 const footerLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Cómo funciona", href: "#camino" },
-  { label: "Rutas", href: "#rutas" },
-  { label: "Ejemplos", href: "#ejemplos" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Cómo funciona", href: `/${LABOR_PATH_HASH}` },
+  { label: "Rutas", href: "/#rutas" },
+  { label: "Ejemplos", href: "/#ejemplos" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const socials = [
@@ -98,12 +100,12 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <HashLink
                     href={link.href}
                     className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.label}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
             </ul>

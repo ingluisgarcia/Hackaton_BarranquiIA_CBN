@@ -58,8 +58,18 @@ html.dark {
   --shadow-card-value: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+html,
+body {
+  overflow-anchor: none;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+html:has(body[data-embed-scroll-lock="true"]) {
+  scroll-behavior: auto;
+  overflow: hidden;
 }
 
 body {

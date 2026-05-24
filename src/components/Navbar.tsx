@@ -7,9 +7,12 @@ import { Logo } from "./Logo";
 import { Button } from "./ui/Button";
 import { ThemeToggle } from "./ThemeToggle";
 
+import { HashLink } from "./HashLink";
+import { LABOR_PATH_HASH } from "@/lib/labor-path";
+
 const navLinks = [
   { label: "Inicio", href: "/#inicio" },
-  { label: "Cómo funciona", href: "/#camino" },
+  { label: "Cómo funciona", href: `/${LABOR_PATH_HASH}` },
   { label: "Rutas", href: "/#rutas" },
   { label: "Ejemplos", href: "/#ejemplos" },
   { label: "FAQ", href: "/#faq" },
@@ -28,12 +31,12 @@ export function Navbar() {
         <ul className="hidden items-center gap-5 xl:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link
+              <HashLink
                 href={link.href}
                 className="text-sm font-medium text-muted transition-colors hover:text-secondary"
               >
                 {link.label}
-              </Link>
+              </HashLink>
             </li>
           ))}
         </ul>
@@ -71,13 +74,13 @@ export function Navbar() {
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
+                <HashLink
                   href={link.href}
                   className="block text-base font-medium text-foreground"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
-                </Link>
+                </HashLink>
               </li>
             ))}
           </ul>
